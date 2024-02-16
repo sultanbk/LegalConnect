@@ -1,0 +1,119 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <br>
+        <title>About Us</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Sometype+Mono:wght@600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            body::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 150%;
+                width: 100%;
+                background-image: url('./images/login_bg.jpg');
+                background-size: cover;
+                opacity: 0.3;
+                z-index: -1;
+            }
+           
+            
+        </style>
+    </head>
+    <body>
+        
+        <header>
+            <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+                
+                    <a class="navbar-brand logo" href="index.html">
+                        <img src="images/logo.png" alt="Logo">
+                    </a>
+                    <!-- rest of the navbar content -->
+              
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.html">USER LOGIN</a></li>
+                        <li class="nav-item"><a class="nav-link" href="aboutus.html">ABOUT</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <style>
+            body {
+                font-family: 'Roboto', sans-serif;
+            }
+            .head {
+                
+                padding: 20px;
+                text-align: center;
+            }
+            .about-image {
+                text-align: center;
+            }
+            .about-image img {
+                width: 100%;
+                max-width: 300px;
+            }
+            .about-info {
+                
+                padding: 20px;
+                border-radius: 5px;
+            }
+            .about-content {
+                margin-bottom: 20px;
+            }
+            .thank-you {
+               
+                padding: 20px;
+                text-align: center;
+                margin-top: 20px;
+            }
+        </style>
+        <div class="head">
+            <h1>About Us</h1>
+            <p class="h4">Welcome to Case Management System !</p>
+        </div>
+        <div class="container">
+            <section class="about">
+                <div class="about-image">
+                    <img src="./images/bg_img_1.jpg">
+                </div>
+                <div class="about-info">
+                    <div class="about-content">
+                        <h2>Case Management System</h2>
+                        <p>Welcome to Case Management System, where we stand as your trusted partner in the realm of efficient and effective case management. Our unwavering dedication is centered around simplifying the intricate processes associated with handling cases. Through our commitment to user satisfaction, we have crafted a user-friendly platform designed to streamline the complexities of case management. At Case Management System, we believe in making the management of cases straightforward and accessible, ensuring that our users can navigate this critical aspect with confidence</p>
+                    </div>
+                    <div class="about-content">
+                        <h2>Our Mission</h2>
+                        <p>At Case Management System, our mission is centered on streamlining the intricate process of case management, fostering enhanced collaboration, and empowering users to navigate their cases with confidence. Through the integration of cutting-edge technology and an unwavering commitment to user satisfaction, we aim to make case management an uncomplicated and accessible experience for everyone involved. Our dedication lies in providing a platform that not only simplifies the complexities of case handling but also ensures that users can efficiently manage their cases, ultimately contributing to a seamless and satisfying experience.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <div class="thank-you">
+            <h1>Thank you for choosing Case Management System.</h1>
+        </div>
+        
+        <script>
+            function scrollToSection(sectionId) {
+                const section = document.getElementById(sectionId);
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        </script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </body>
+    </html>

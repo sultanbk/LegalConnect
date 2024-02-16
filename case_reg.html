@@ -1,0 +1,345 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Aid Registration</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+            
+                <a class="navbar-brand logo" href="index.html">
+                    <img src="images/logo.png" alt="Logo">
+                </a>
+          
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">USER LOGIN</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">ABOUT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">LOGIN</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">ABOUT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container mt-5 bg-light text-center text-dark rounded p-4">
+        <form action="insert.php" method="post">
+            <h4 class="text-center">Legal Aid Application</h4>
+            <table class="table"> <table class="table">
+                
+                <tr>
+                    <td><label for="applicationFor">Application For</label></td>
+                    <td>
+                        <select class="form-control" id="applicationFor" name="applicationFor" onchange="handleApplicationForChange(this)" required>
+                            <option value="" disabled selected>Choose Option</option>
+                            <option value="national">National Level Service</option>
+                            <option value="state">State Level Authority</option>
+                            <option value="highCourt">High Court Level</option>
+                            <option value="taluk">Taluk</option>
+                        </select>
+                    </td>
+                    <td><label for="receivedThrough">Received Through</label></td>
+                    <td>
+                        <select class="form-control" id="receivedThrough" name="receivedThrough" type="hidden">
+                            <option value="" disabled selected>Choose Option</option>
+                            <option value="self">Self</option>
+                            <!-- Other options will go here -->
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="state">State</label></td>
+                    <td>
+                        <select class="form-control" id="state" name="state">
+                            <option value="" disabled selected>Choose Option</option>
+                            <option value="andhraPradesh">Andhra Pradesh</option>
+                            <option value="arunachalPradesh">Karnataka</option>
+                            <option value="assam">Assam</option>
+                            <option value="bihar">Bihar</option>
+                            <option value="chhattisgarh">Chhattisgarh</option>
+                        </select>
+                    </td>
+                    <td><label for="district">District</label></td>
+                    <td>
+                        <select class="form-control" id="district" name="district">
+                            <option value="" disabled selected>Choose Option</option>
+                        </select>
+                    </td>
+                    <td><label for="taluk">Taluk</label></td>
+                    <td>
+                        <select class="form-control" id="taluk" name="taluk">
+                            <option value="" disabled selected>Choose Option</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <table class="table">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Legal Aid</th>
+                        </tr>
+                    </thead>
+                <tr>
+                    <td><label for="natureOfLegalAid">Nature of Legal Aid</label></td>
+                    <td>
+                        <select class="form-control" id="natureOfLegalAid" name="natureOfLegalAid" required>
+                            <!-- Add your options here -->
+                            <option value="option1">Allegation of corruption/malpractices</option>
+                            <option value="option2">Central Govt: Miscellaneous</option>
+                            <option value="option3">Civic amenities/Quality of service
+                                Compensations/Refunds</option>
+                            <option value="option3">Delay in decision/implementation of decision</option>
+                            <option value="option3">Law & Order</option>    
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="summaryOfProblem">Summary of the Problem for Which Legal Aid is Sought</label></td>
+                    <td>
+                        <textarea class="form-control" id="summaryOfProblem" rows="3" name="summaryOfProblem"></textarea>
+                    </td>
+                </tr>
+            </table>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th colspan="2">Personal Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><label for="applicationName">Application Name</label></td>
+                        <td><input type="text" class="form-control" id="applicationName" name="applicationName"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="gender">Gender</label></td>
+                        <td>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                                <label class="form-check-label" for="male">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                                <label class="form-check-label" for="female">Female</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="other" value="other">
+                                <label class="form-check-label" for="other">Other</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="dob">Date of Birth</label></td>
+                        <td><input type="date" class="form-control" id="dob" name="dob" placeholder="DD/MM/YYYY"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="mobileNo">Mobile No</label></td>
+                        <td><input type="text" class="form-control" id="mobileNo" name="mobileNo"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email</label></td>
+                        <td><input type="email" class="form-control" id="email" name="email"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="eligibilityCategory">Eligibility Category</label></td>
+                        <td>
+                            <select class="form-control" id="eligibilityCategory" name="eligibilityCategory" required>
+                                <!-- Add your options here -->
+                                <option value="option1">Scheduled Caste</option>
+                                <option value="option2">Scheduled Tribe</option>
+                                <option value="option3">General (Persons whose annual income does not exceed prescribed limit)</option>
+                                <option value="option4">Women</option>
+                                <option value="option5">Children</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="currentAddress">Current Address</label></td>
+                        <td><textarea class="form-control" id="currentAddress" name="currentAddress" rows="3"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label for="state">State</label></td>
+                        <td><input type="text" class="form-control" id="state" name="pr_state"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="district">District</label></td>
+                        <td><input type="text" class="form-control" id="district" name="pr_district"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th colspan="2">Case Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><label for="previousCase">Previous Case</label></td>
+                        <td>
+                            <select class="form-control" id="previousCase" name="previousCase" onchange="handlePreviousCaseChange(this)">
+                                <option value="" disabled selected>Choose Option</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="caseType">Case Type</label></td>
+                        <td>
+                            <select class="form-control" id="caseType" name="caseType">
+                                <!-- Add your options here -->
+                                <option value="option1">Appeals against Interim Orders</option>
+                                <option value="option2">Appeals against Orders of Revenue Authorities</option>
+                                <option value="option3">Application for Bail before Sessions Court & Magistrates</option>
+                                <option value="option4">Bail Application</option>
+                                <option value="option5">Cases before Revenue Execution & Other Authorities</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="caseNo">Case No</label></td>
+                        <td><input type="text" class="form-control" id="caseNo" name="caseNo"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+    <!-- Include Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function handleApplicationForChange(selectElement) {
+            var value = selectElement.value;
+            var receivedThroughSelect = document.getElementById('receivedThrough');
+            var stateSelect = document.getElementById('state');
+            var districtSelect = document.getElementById('district');
+            var talukSelect = document.getElementById('taluk');
+        
+            // Reset all selects
+            receivedThroughSelect.disabled = false;
+            stateSelect.disabled = false;
+            districtSelect.disabled = false;
+            talukSelect.disabled = false;
+        
+            if (value === 'national') {
+                stateSelect.disabled = false;
+                districtSelect.disabled = false;
+                talukSelect.disabled = true;
+            } else if (value === 'state' || value === 'highCourt') {
+                talukSelect.disabled = true;
+            }
+        
+            // Add the districts for the selected state
+            stateSelect.addEventListener('change', function() {
+                districtSelect.innerHTML = ''; // Clear the current options
+                districtSelect.disabled = false; // Enable the select
+        
+                if (this.value === 'andhraPradesh') {
+                    var districts = ['Anantapur', 'Chittoor', 'East Godavari', 'Guntur', 'Krishna'];
+                    districts.forEach(function(district) {
+                        var option = document.createElement('option');
+                        option.value = district;
+                        option.text = district;
+                        districtSelect.appendChild(option);
+                    });
+                }
+                // Add else if conditions for other states and their districts here
+            });
+        
+            // Add the taluks for the selected district
+            districtSelect.addEventListener('change', function() {
+                talukSelect.innerHTML = ''; // Clear the current options
+                talukSelect.disabled = false; // Enable the select
+        
+                if (this.value === 'Anantapur') {
+                    var taluks = ['Taluk1', 'Taluk2', 'Taluk3', 'Taluk4', 'Taluk5'];
+                    taluks.forEach(function(taluk) {
+                        var option = document.createElement('option');
+                        option.value = taluk;
+                        option.text = taluk;
+                        talukSelect.appendChild(option);
+                    });
+                }
+
+                else if (this.value === 'Chittoor') {
+                    var taluks = ['Taluk1', 'Taluk2', 'Taluk3', 'Taluk4', 'Taluk5'];
+                    taluks.forEach(function(taluk) {
+                        var option = document.createElement('option');
+                        option.value = taluk;
+                        option.text = taluk;
+                        talukSelect.appendChild(option);
+                    });
+                }
+
+                else if (this.value === 'East Godavari') {
+                    var taluks = ['Taluk1', 'Taluk2', 'Taluk3', 'Taluk4', 'Taluk5'];
+                    taluks.forEach(function(taluk) {
+                        var option = document.createElement('option');
+                        option.value = taluk;
+                        option.text = taluk;
+                        talukSelect.appendChild(option);
+                    });
+                }
+
+                else if (this.value === 'Guntur') {
+                    var taluks = ['Taluk1', 'Taluk2', 'Taluk3'];
+                    taluks.forEach(function(taluk) {
+                        var option = document.createElement('option');
+                        option.value = taluk;
+                        option.text = taluk;
+                        talukSelect.appendChild(option);
+                    });
+                }
+                else if (this.value === 'Krishna') {
+                    var taluks = ['Taluk1', 'Taluk2', 'Taluk3'];
+                    taluks.forEach(function(taluk) {
+                        var option = document.createElement('option');
+                        option.value = taluk;
+                        option.text = taluk;
+                        talukSelect.appendChild(option);
+                    });
+                }
+
+                // Add else if conditions for other districts and their taluks here
+            });
+        }
+        
+    function handlePreviousCaseChange(select) {
+        var caseType = document.getElementById('caseType');
+        var caseNo = document.getElementById('caseNo');
+
+        if (select.value === 'no') {
+            caseType.disabled = true;
+            caseNo.disabled = true;
+        } else {
+            caseType.disabled = false;
+            caseNo.disabled = false;
+        }
+    }
+</script>
+        </script>
+</body>
+</html>

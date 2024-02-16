@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track your Case</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+            
+                <a class="navbar-brand logo" href="index.html">
+                    <img src="images/logo.png" alt="Logo">
+                </a>
+                <!-- rest of the navbar content -->
+          
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">USER LOGIN</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">ABOUT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container bg-light pt-">
+        <h2 class="text-center"><b>Track your Case</b></h2>
+        <br>
+        <form action="cnr_info.php" method="get">
+            <div class="row">
+                <div class="form-group col-6 mx-auto">
+                    <label for="cnrNumber" class="text-center d-block h4"><b>CNR Number</b></label>
+                    <input type="text" class="form-control" id="cnrNumber" name="cnr">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="captcha">Captcha</label>
+                <div class="row">
+                    <div class="col-2">
+                        <div class="bg-secondary text-white p-2 mb-2 rounded" id="captcha" style="width: 100px;">
+                        </div>
+                        <a href="#" class="btn btn-secondary btn-sm" onclick="generateCaptcha()">
+                            <i class="fas fa-sync-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <input type="text" class="form-control" id="enteredCaptcha">
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+<style>
+    body {
+    padding-top: 100px; /* Adjust this value as needed */
+}
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        function generateCaptcha() {
+            var captcha = Math.random().toString(36).substring(2, 8);
+            document.getElementById('captcha').innerText = captcha;
+        }
+
+        function validateCaptcha(event) {
+            event.preventDefault();
+
+            var captcha = document.getElementById('captcha').innerText;
+            var enteredCaptcha = document.getElementById('enteredCaptcha').value;
+
+            if (captcha !== enteredCaptcha) {
+                alert('Captcha does not match');
+            } else {
+                alert('Captcha matches');
+            }
+        }
+
+        generateCaptcha();
+    </script>
+</body>
+</html>
